@@ -107,7 +107,7 @@ func GetResourceNames(resources []types.Resource) []string {
 }
 
 // MarshalResource converts the Resource to MarshaledResource.
-func MarshalResource(resource types.Resource) (types.MarshaledResource, error) {
+var MarshalResource = func(resource types.Resource) (types.MarshaledResource, error) {
 	return proto.MarshalOptions{Deterministic: true}.Marshal(resource)
 }
 
